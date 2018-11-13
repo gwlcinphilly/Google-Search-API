@@ -148,7 +148,8 @@ def _filter_link(link):
                 o = urlparse(link, 'http')
                 if o.netloc and 'google' not in o.netloc:
                     return link
-
+        if link.startswith("https") or link.startswith("http"):
+            return link
     # Otherwise, or on error, return None.
     except Exception:
         pass
